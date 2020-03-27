@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+
+.diff_label {
+    @apply block text-gray-700 text-sm font-bold mb-2;
+}
+.diff_input {
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+}
+
+.diff_input:focus {
+    @apply outline-none shadow-outline;
+}
+
+.diff_submit {
+    @apply bg-indigo-500 text-white font-bold py-2 px-4 rounded mt-4;
+}
+.diff_submit:hover {
+    @apply bg-indigo-500 bg-indigo-700;
+}
+
+.diff_submit:focus {
+    @apply bg-indigo-500 outline-none shadow-outline;
+}
+@tailwind utilities;

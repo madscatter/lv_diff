@@ -1,0 +1,25 @@
+<div class="w-full max-w-xl p-2 mt-4 mx-auto">
+  <%= f = form_for :calc_diff,"#",
+   [phx_submit: :calc_diff, class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"]
+   %>
+    <%= label f, "Text1", [class: "diff_label"] %>
+    <%= text_input f, :text1, [value: @text1, id: :text1, phx_hook: "comment_input", class: "diff_input focus:diff_input"] %>
+
+    <%= label f, "Text2", [class: "diff_label mt-4"] %>
+    <%= text_input f, :text2, [value: @text2, id: :text2, phx_hook: "comment_input", class: "diff_input focus:diff_input"] %>
+
+    <%= submit "Calc Diff", [class: "diff_submit hover:diff_submit focus:diff_submit"] %>
+  </form>
+  <div class="flex items-center bg-gray-200 mt-10 ">
+    <%= unless Enum.empty?(@ses) do %>
+      <table class="table-auto mx-auto shadow-md">
+      <tr class="bg-blue-200">
+        <th class="px-4 py-2 text-center">Difference</th>
+        <th class="px-4 py-2 w-48 text-center">Text1</th>
+        <th class="px-4 py-2 w-48 text-center">Text2</th>
+      </tr>
+       <%= LvDiffWeb.DiffLiveView.render_ses(@ses) %>
+      </table>
+    <% end %>
+  </div>
+</div>

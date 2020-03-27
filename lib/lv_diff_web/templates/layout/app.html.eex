@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%= assigns[:page_title] || "LvDiff · Phoenix Framework" %></title>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <%= csrf_meta_tag() %>
+  </head>
+  <body class="bg-gray-200">
+    <header class="bg-blue-700 p-2 shadow">
+      <div class="text-white text-2xl font-bold text-center">string diff extractor</div>
+    </header>
+    <main role="main" class="">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+    <div class="max-w-xl mx-auto mt-4 p-2">
+    <div class="text-gray-800">
+      Blog is <a href="https://www.870labo.com/posts/create-diff-program-with-elixir-and-liveview/"  class="text-orange-600">here.</a>
+    </div>
+    <div class="text-gray-800">
+      Source is <a href="https://github.com/madscatter/lv_diff/" class="text-orange-600">here.</a>
+    </div>
+    </div>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

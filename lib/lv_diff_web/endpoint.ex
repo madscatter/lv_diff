@@ -11,7 +11,7 @@ defmodule LvDiffWeb.Endpoint do
   ]
 
   socket "/socket", LvDiffWeb.UserSocket,
-    websocket: true,
+    websocket: [timeout: 45_000],
     longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket,
